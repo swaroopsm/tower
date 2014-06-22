@@ -10,6 +10,10 @@ class TowerTest extends PHPUnit_Framework_TestCase {
     $this->tower = new Tower();
   }
 
+  public function tearDown() {
+    $this->tower = null;
+  }
+
   public function testInstance() {
     $this->assertInstanceOf('Tower', $this->tower);
   }
