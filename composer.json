@@ -8,8 +8,8 @@
             "email": "swaroop.striker@gmail.com"
         }
     ],
-    "require": {
-
+    "require-dev": {
+      "phpunit/phpunit": "4.*"
     },
     "autoload": {
       "classmap": ["src/"]
