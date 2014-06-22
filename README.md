@@ -84,3 +84,5 @@ This is useful if you would like to dynamically save contents to a file.
 ~~~
 $tower->save('filename.txt');
 ~~~
+
+[Example Code](https://github.com/swaroopsm/tower/wiki/Example)
