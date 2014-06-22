@@ -1,0 +1,14 @@
+{
+    "name": "swaroopsm/tower",
+    "description": "A light weight helper for simple php templating",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Swaroop SM",
+            "email": "swaroop.striker@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}
