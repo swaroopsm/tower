@@ -26,12 +26,34 @@ class Tower {
   }
 
   /**
+   * Gets the data by key / all variable
+   *
+   * @param null|string $key   The key name of the variable
+   */
+  public function get($key=null) {
+    if($key === null) {
+      return $this->data;
+    }
+
+    return $this->data[$key];
+  }
+
+  /**
    * Sets the template file
    *
    * @param string $filename  Path of the template file to be used
    */
   public function setTemplate($filename) {
     $this->templateFile = $filename;
+  }
+
+  /**
+   * Get the template filename
+   *
+   * @return string Path of the template file to be used
+   */
+  public function getTemplate() {
+    return $this->templateFile;
   }
 
   /**
