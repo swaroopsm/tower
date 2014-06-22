@@ -42,7 +42,7 @@ Tell Tower which file should be used as the template.
   <title></title>
 </head>
 <body>
-  <h2><?php $name ?></h2>
+  <h2><?= $name ?></h2>
   <p><?= $description ?></p>
 </body>
 </html>
