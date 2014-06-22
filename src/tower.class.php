@@ -22,7 +22,10 @@ class Tower {
   }
 
   public function save($filename) {
-    
+    $contents = $this->getContents();
+    $handle = fopen($filename, "w");
+    fwrite($handle, $contents);
+    fclose($handle);
   }
 
   public function getContents() {
