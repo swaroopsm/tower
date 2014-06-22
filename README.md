@@ -1,6 +1,7 @@
 # Tower
 
 [![Build Status](https://travis-ci.org/swaroopsm/tower.svg?branch=master)](https://travis-ci.org/swaroopsm/tower)
+[![Code Climate](https://codeclimate.com/github/swaroopsm/tower.png)](https://codeclimate.com/github/swaroopsm/tower)
 [![Latest Stable Version](https://poser.pugx.org/swaroopsm/tower/v/stable.svg)](https://packagist.org/packages/swaroopsm/tower) 
 [![Total Downloads](https://poser.pugx.org/swaroopsm/tower/downloads.svg)](https://packagist.org/packages/swaroopsm/tower) 
 [![Latest Unstable Version](https://poser.pugx.org/swaroopsm/tower/v/unstable.svg)](https://packagist.org/packages/swaroopsm/tower) 
