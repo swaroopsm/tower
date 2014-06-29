@@ -2,6 +2,7 @@
     "name": "swaroopsm/tower",
     "description": "A light weight helper for simple php templating",
     "license": "MIT",
+    "keywords": ["templating", "template", "layout"],
     "authors": [
         {
             "name": "Swaroop SM",
