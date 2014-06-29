@@ -9,10 +9,12 @@
 class Tower {
 
   private $templateFile;
+  private $layoutFile;
   private $data;
 
   public function __construct() {
     $this->data = array();
+    $this->layoutFile = NULL;
   }
 
   /**
@@ -57,6 +59,24 @@ class Tower {
   }
 
   /**
+   * Sets the layout file
+   *
+   * @param string $filename  Path of the layout file to be used
+   */
+  public function setLayout($filename) {
+    $this->layoutFile = $filename;
+  }
+
+  /**
+   * Get the layout filename
+   *
+   * @return string Path of the layout file to be used
+   */
+  public function getLayout() {
+    return $this->layoutFile;
+  }
+
+  /**
    * Render the template with the contents
    */
   public function render() {
@@ -84,15 +104,37 @@ class Tower {
     return $this->bufferize();
   }
 
+  /**
+   * Check whether a layout has been set
+   *
+   * @return boolean Returns if true/false
+   */
+  public function layoutExists() {
+    if($this->layoutFile) {
+      return true;
+    }
+
+    return false;
+  }
+
   private function bufferize() {
     foreach($this->data as $key => $value) {
       ${$key} = $value;
     }
 
+    $yield = '';
     ob_start();
-    require $this->templateFile;
-    $contents = ob_get_contents();
+    require $this->getTemplate();
+    $yield = $contents = ob_get_contents();
     ob_end_clean();
+
+    if($this->layoutExists()) {
+      ob_start();
+      require $this->getLayout();
+      $contents = ob_get_contents();
+
+      ob_end_clean();
+    }
 
     return $contents;
   }
