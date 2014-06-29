@@ -33,11 +33,33 @@ class TowerTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($this->tower->getTemplate(), $template);
   }
 
+  public function testSetLayout() {
+    $layout = dirname(__FILE__) . '/fixtures/layout.php';
+    $this->tower->setLayout($layout);
+    $this->assertEquals($this->tower->getLayout(), $layout);
+  }
+
+  public function testLayoutExists() {
+    $this->assertEquals($this->tower->layoutExists(), false);
+    $layout = dirname(__FILE__) . '/fixtures/layout.php';
+    $this->tower->setLayout($layout);
+    $this->assertEquals($this->tower->layoutExists(), true);
+  }
+
   public function testGetContents() {
     $template = dirname(__FILE__) . '/fixtures/template.php';
     $this->tower->setTemplate($template);
     $this->tower->set('tower', 'Tower');
     $this->assertEquals($this->tower->getContents(), 'Hello Tower');
+  }
+
+  public function testLayoutYield() {
+    $layout = dirname(__FILE__) . '/fixtures/layout.php';
+    $template = dirname(__FILE__) . '/fixtures/template.php';
+    $this->tower->setLayout($layout);
+    $this->tower->setTemplate($template);
+    $this->tower->set('tower', 'Tower');
+    $this->assertEquals($this->tower->getContents(), 'This is the layout template. Hello Tower');
   }
 
   public function testSave() {
