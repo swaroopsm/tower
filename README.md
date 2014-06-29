@@ -20,7 +20,7 @@ Tower is available via composer. Add the following line to your `composer.json` 
 
 ~~~
 "require": {
-  "swaroopsm/tower": "0.1"
+  "swaroopsm/tower": "0.2"
 }
 ~~~
 
