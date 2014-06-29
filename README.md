@@ -74,6 +74,17 @@ Render on your browser.
 $tower->render();
 ~~~
 
+#### Template Layouting
+
+Tower also lets you add a layout for your templates. This can be useful if for your webpages.
+Example on using layout in your templates;
+
+~~~
+$tower->setLayout('layout.php');
+~~~
+
+You use the `$yield` to render the template contents in your helper. A more detailed example on using layout is availabe at: [Layout Example](https://github.com/swaroopsm/tower/wiki/Layout-Example)
+
 ### Some Goodies
 
 Few other extra methods included in Tower.
@@ -86,4 +97,6 @@ This is useful if you would like to dynamically save contents to a file.
 $tower->save('filename.txt');
 ~~~
 
-[Example Code](https://github.com/swaroopsm/tower/wiki/Example)
+#### Examples
+[Render Template](https://github.com/swaroopsm/tower/wiki/Render-Template)
+[Layout Example](https://github.com/swaroopsm/tower/wiki/Layout-Example)
