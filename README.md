@@ -20,7 +20,7 @@ Tower is available via composer. Add the following line to your `composer.json` 
 
 ~~~
 "require": {
-  "swaroopsm/tower": "0.2"
+  "swaroopsm/tower": "0.3"
 }
 ~~~
 
@@ -85,6 +85,42 @@ $tower->setLayout('layout.php');
 
 You use the `$yield` to render the template contents in your helper. A more detailed example on using layout is availabe at: [Layout Example](https://github.com/swaroopsm/tower/wiki/Layout-Example)
 
+#### Using Partials
+
+Partials allows you to include templates in other templates thus allowing you to re-use the templates. Refer to the following code in order to set partials for your templates.
+
+~~~
+$tower->partial->set('header', 'header.php');
+$tower->partial->set('footer', 'footer.php');
+~~~
+
+And to render these partials in your templates use:
+
+~~~
+<?= $partial['header'] ?>
+
+Some stuffs here...
+
+<?= $partial['footer'] ?>
+~~~
+
+If you decide to use a different variable for the partial instead of `$partial` use the following:
+
+~~~
+$tower->partial->setPrefix('towerPartial');
+~~~
+
+Now you can do the following:
+
+~~~
+<?= $towerPartial['header'] ?>
+
+Some stuffs here...
+
+<?= $towerPartial['footer'] ?>
+~~~
+
+Refer here for a [Detailed Example](https://github.com/swaroopsm/tower/wiki/Including-Partials)
 ### Some Goodies
 
 Few other extra methods included in Tower.
