@@ -136,3 +136,4 @@ $tower->save('filename.txt');
 #### Examples
 - [Render Template](https://github.com/swaroopsm/tower/wiki/Render-Template)
 - [Layout Example](https://github.com/swaroopsm/tower/wiki/Layout-Example)
+- [Partials Example](https://github.com/swaroopsm/tower/wiki/Including-Partials)
