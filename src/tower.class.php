@@ -32,6 +32,7 @@ class Tower {
    * Gets the data by key / all variable
    *
    * @param null|string $key   The key name of the variable
+   * @return array             The data for the specific key that was set using `set`
    */
   public function get($key=null) {
     if($key === null) {
