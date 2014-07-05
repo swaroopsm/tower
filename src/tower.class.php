@@ -11,7 +11,6 @@ class Tower {
   private $templateFile;
   private $layoutFile;
   private $data;
-  public $partial;
 
   public function __construct() {
     $this->data = array();

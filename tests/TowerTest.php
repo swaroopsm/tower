@@ -16,6 +16,7 @@ class TowerTest extends PHPUnit_Framework_TestCase {
 
   public function testInstance() {
     $this->assertInstanceOf('Tower', $this->tower);
+    $this->assertInstanceOf('TowerPartial', $this->tower->partial);
   }
 
   public function testDataVairableExists() {
@@ -60,6 +61,19 @@ class TowerTest extends PHPUnit_Framework_TestCase {
     $this->tower->setTemplate($template);
     $this->tower->set('tower', 'Tower');
     $this->assertEquals($this->tower->getContents(), 'This is the layout template. Hello Tower');
+  }
+
+  public function testPartialRender() {
+    $layout = dirname(__FILE__) . '/fixtures/layout.php';
+    $template = dirname(__FILE__) . '/fixtures/templatePartial.php';
+    $header = dirname(__FILE__) . '/fixtures/header.php';
+    $footer = dirname(__FILE__) . '/fixtures/footer.php';
+    $this->tower->setLayout($layout);
+    $this->tower->setTemplate($template);
+    $this->tower->partial->set('header', $header);
+    $this->tower->partial->set('footer', $footer);
+    $this->tower->set('tower', 'Tower');
+    $this->assertEquals($this->tower->getContents(), "This is the layout template. Header.\n Hello Tower Footer.\n");
   }
 
   public function testSave() {
