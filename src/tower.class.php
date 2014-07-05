@@ -16,7 +16,7 @@ class Tower {
   public function __construct() {
     $this->data = array();
     $this->layoutFile = NULL;
-    $this->partial = new Partial();
+    $this->partial = new TowerPartial();
   }
 
   /**

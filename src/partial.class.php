@@ -1,6 +1,6 @@
 <?php
 
-class Partial {
+class TowerPartial {
 
   public $data;
   private $prefix;
