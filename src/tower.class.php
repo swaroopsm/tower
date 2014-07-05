@@ -11,10 +11,12 @@ class Tower {
   private $templateFile;
   private $layoutFile;
   private $data;
+  public $partial;
 
   public function __construct() {
     $this->data = array();
     $this->layoutFile = NULL;
+    $this->partial = new Partial();
   }
 
   /**
@@ -122,7 +124,16 @@ class Tower {
       ${$key} = $value;
     }
 
+    ${$this->partial->getPrefix()} = array();
+    foreach($this->partial->data as $key => $value) {
+      ob_start();
+      require $value;
+      ${$this->partial->getPrefix()}[$key] = ob_get_contents();
+      ob_end_clean();
+    }
+
     $yield = '';
+
     ob_start();
     require $this->getTemplate();
     $yield = $contents = ob_get_contents();
