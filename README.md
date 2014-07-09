@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/swaroopsm/tower.svg?branch=master)](https://travis-ci.org/swaroopsm/tower)
 [![Code Climate](https://codeclimate.com/github/swaroopsm/tower.png)](https://codeclimate.com/github/swaroopsm/tower)
-[ ![Codeship Status for swaroopsm/tower](https://www.codeship.io/projects/92ed1b80-e9ba-0131-b887-2eefd7a2b3d5/status)](https://www.codeship.io/projects/26230)
 [![Latest Stable Version](https://poser.pugx.org/swaroopsm/tower/v/stable.svg)](https://packagist.org/packages/swaroopsm/tower) 
 [![Total Downloads](https://poser.pugx.org/swaroopsm/tower/downloads.svg)](https://packagist.org/packages/swaroopsm/tower) 
 [![Latest Unstable Version](https://poser.pugx.org/swaroopsm/tower/v/unstable.svg)](https://packagist.org/packages/swaroopsm/tower) 
