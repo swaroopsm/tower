@@ -86,4 +86,21 @@ class TowerTest extends PHPUnit_Framework_TestCase {
     $this->assertStringEqualsFile($savefile, 'Hello Tower');
   }
 
+  public function testSetDirectory() {
+    $this->tower->setDirectory(dirname(__FILE__) . '/fixtures/templates/');
+    $this->tower->setTemplate('hello.php');
+
+    $this->assertEquals($this->tower->getTemplate(), dirname(__FILE__) . '/fixtures/templates/hello.php');
+    $this->assertEquals($this->tower->getDirectory(), dirname(__FILE__) . '/fixtures/templates/');
+  }
+
+  public function testSetTemplateExtension() {
+    $this->tower->setDirectory(dirname(__FILE__) . '/fixtures/templates/');
+    $this->tower->setTemplateExtension('.php');
+    $this->tower->setTemplate('hello');
+
+    $this->assertEquals($this->tower->getTemplate(), dirname(__FILE__) . '/fixtures/templates/hello.php');
+    $this->assertEquals($this->tower->getTemplateExtension(), '.php');
+  }
+
 }

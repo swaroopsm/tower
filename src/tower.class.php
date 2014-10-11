@@ -11,11 +11,15 @@ class Tower {
   private $templateFile;
   private $layoutFile;
   private $data;
+  private $directory;
+  private $templateExtension;
 
   public function __construct() {
     $this->data = array();
     $this->layoutFile = NULL;
     $this->partial = new TowerPartial();
+    $this->directory = '';
+    $this->templateExtension = NULL;
   }
 
   /**
@@ -48,7 +52,7 @@ class Tower {
    * @param string $filename  Path of the template file to be used
    */
   public function setTemplate($filename) {
-    $this->templateFile = $filename;
+    $this->templateFile = $this->directory . $filename . $this->templateExtension;
   }
 
   /**
@@ -76,6 +80,42 @@ class Tower {
    */
   public function getLayout() {
     return $this->layoutFile;
+  }
+
+  /**
+   * Sets the directory from where all templates are served.
+   *
+   * @param string $directory Absolute Path of the directory
+   */
+  public function setDirectory($directory) {
+    $this->directory = $directory;
+  }
+
+  /**
+   * Get the directory from where all the templates are served.
+   *
+   * @return string Absolute Path of the directory
+   */
+  public function getDirectory() {
+    return $this->directory;
+  }
+
+  /**
+   * Sets the default extension of a template file.
+   *
+   * @param string $extension Extension name with '.' prefixed. Eg.: (.php)
+   */
+  public function setTemplateExtension($extension) {
+    $this->templateExtension = $extension;
+  }
+
+  /**
+   * Get the default template extension.
+   *
+   * @return string File extension of a template.
+   */
+  public function getTemplateExtension() {
+    return $this->templateExtension;
   }
 
   /**
